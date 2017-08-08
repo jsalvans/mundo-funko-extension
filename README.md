@@ -8,13 +8,13 @@ Una forma fácil y sencilla de no perderte ninguna nuestras ofertas y estar siem
 
 **Requerimientos**
 
-- [Node.js](https://nodejs.org/en/)
-- [Gulp](http://gulpjs.com/) (`npm install --global gulp-cli`)
+- [Node.js](https://nodejs.org/es/download/)
+- [Gulp](http://gulpjs.com/) (`npm install --global gulp`)
 
 Usa los siguientes comandos:
 
 - `npm install`
-- `gulp build`
+- `gulp`
 
 Ahora puedes cargar la extensión en su navegador a través de la página de herramientas de extensión del navegador:
 
