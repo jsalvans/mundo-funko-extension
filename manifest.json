@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+	"name": "Mundo Funko",
+	"version": "1.0.4",
+	"description": "Extensión para ver las novedades de Mundo Funko",
+	"icons": {
+		"16": "img/icon16.png",
+		"48": "img/icon48.png",
+		"128": "img/icon128.png"
+	},
+	"browser_action": {
+		"default_title": "Mundo Funko",
+		"default_icon": "img/icon.png",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"page": "background.html"
+	},
+	"permissions": [
+		"storage", "notifications", "<all_urls>"
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "mundofunko-chrome-extension",
+	"description": "Mundo Funko Chrome Extension",
+	"version": "1.0.0",
+	"author": "Jordi Salvans",
+	"dependencies": {
+		"jquery": "^3.2.1",
+		"angular": "^1.6.4",
+		"ngstorage": "^0.3.11"
+	},
+	"devDependencies" : {
+		"jshint": "^2.9.5",
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-uglify": "^3.0.0",
+		"gulp-concat": "^2.6.1",
+		"gulp-util": "^3.0.8",
+		"gulp-clean-css": "^3.7.0",
+		"gulp-jshint": "^2.0.4",
+		"gulp-sourcemaps": "^2.6.0",
+		"gulp-ng-annotate": "^2.0.0",
+		"gulp-minify-html": "^1.0.6",
+		"gulp-replace": "^0.6.1",
+		"gulp-delete-lines": "^0.0.7"
+	}
+}

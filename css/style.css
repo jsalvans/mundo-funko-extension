@@ -1,0 +1,157 @@
+body {
+	width: 400px;
+	height: 500px;
+	margin: 0;
+}
+
+.bar {
+	background-color: #8d74b9;
+	width: 100%;
+	height: 40px;
+}
+
+.loader {
+	margin: 10px auto;
+	border: 8px solid #f3f3f3;
+	border-top: 8px solid #3498db;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	animation: spin 2s linear infinite;
+}
+
+.error {
+	color: rgb(173, 147, 218);
+	text-decoration: none;
+	font-weight: 700;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;;
+	margin: 10px auto;
+	text-align: center;
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+.funko {
+	width: 100%;
+	height: 70px;
+	margin-top: 10px;
+}
+
+.thumbnail {
+	height: 100%;
+	width: 30%;
+	float: left;
+	position: relative;
+	text-align:center;
+	display: inline-block;
+}
+
+.thumbnail img {
+	max-height: 70px;
+	max-width: 98px;
+	vertical-align: middle;
+}
+
+.nombre {
+	height: 100%;
+	width: 65%;
+	float: right;
+	background-color: rgba(141, 116, 185, 0.6);
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	text-align: center;
+	word-wrap: break-word;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.nombre a {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	text-decoration: none;
+	color: #604e7f;
+	padding: 15px;
+	vertical-align: -webkit-baseline-middle;
+}
+
+.nombre a:hover {
+	color: #8d74b9;
+}
+
+.precio {
+	background-color: #604e7f;
+	position: absolute;
+	right: 0;
+	padding: 5px;
+	float: right;
+	border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	margin-top: 44px;
+}
+
+.precio a {
+	color: rgb(173, 147, 218);
+	text-decoration: none;
+	font-weight: 700;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 12px;
+}
+
+.precio a:hover {
+	color: rgba(141, 116, 185, 0.6);
+}
+
+.titulo {
+	padding: 5px 0;
+	background-color: #725e97;
+	color: #fff;
+	font-size: 20px;
+	width: 100%;
+	height: 27px;
+	font-weight: 700;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
+}
+
+.novedades .titulo {
+	margin-top: 10px;
+}
+
+.titulo span {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.desc {
+	float: left;
+	height: 100%;
+	width: 80%;
+	color: #725e97;
+	font-weight: 400;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.input {
+	float: right;
+	width: 15%;
+}
+
+.input input {
+	width: 95%;
+}
+
+@-moz-document url-prefix() {
+	body {
+		margin-right: 17px;
+	}
+
+	.precio {
+		padding: 2.5px 5px;
+	}
+}
