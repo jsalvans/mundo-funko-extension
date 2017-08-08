@@ -12,8 +12,11 @@ Una forma fácil y sencilla de no perderte ninguna nuestras ofertas y estar siem
 
 - [Node.js](https://nodejs.org/es/download/)
 - [Gulp](http://gulpjs.com/) (`npm install --global gulp`)
+- Credenciales de la [API de Kiory](http://api.kiory.pro
 
-Usa los siguientes comandos:
+Primero ve a la carpeta `js` e inserta tus credenciales de la API de Kiory en el archivo `mundofunko-config.js`
+
+Entonces usa los siguientes comandos:
 
 - `npm install`
 - `gulp`
