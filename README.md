@@ -4,7 +4,7 @@ Extensión oficial de Mundo Funko para navegadores web.
 Una forma fácil y sencilla de no perderte ninguna nuestras ofertas y estar siempre al día de nuestras novedades.
 
 <a href="https://chrome.google.com/webstore/detail/mundo-funko/goibikienfkamlekcdhlcobgnjmaoabh" target="_blank"><img src="https://developer.chrome.com/webstore/images/ChromeWebStore_BadgeWBorder_v2_206x58.png"></a>
-<a href="https://addons.mozilla.org/es/firefox/addon/mundo-funko/" target="_blank" height="58"><img src="https://www.mozilla.org/media/img/logos/firefox/logo-wordmark-large.f1831564f64e.png"></a>
+<a href="https://addons.mozilla.org/es/firefox/addon/mundo-funko/" target="_blank"><img src="https://www.mozilla.org/media/img/logos/firefox/logo-wordmark-large.f1831564f64e.png" height="58"></a>
 
 
 # Construir y ejecutar
