@@ -7,63 +7,68 @@
 
 		<!-- DEPENDENCES -->
 		<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
 		<script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
 		<script type="text/javascript" src="./node_modules/ngstorage/ngStorage.min.js"></script>
+		<script type="text/javascript" src="./node_modules/ng-scrollbars/dist/scrollbars.min.js"></script>
 		<script type="text/javascript" src="./js/mundofunko-app.js"></script>
 		<script type="text/javascript" src="./js/mundofunko-controller.js"></script>
 
+		<link rel="stylesheet" type="text/css" href="./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"/>
 		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 	</head>
 	<body ng-app="MundoFunkoBrowserExtApp">
-		<div ng-controller="MundoFunkoBrowserExtController" >
+		<div class="height100" ng-controller="MundoFunkoBrowserExtController">
 			<div class="bar">
 				<a href="http://mundofunko.com/" target="_blank"><img src="./img/logo.png" /></a>
 			</div>
-			<div class="ofertas">
-				<div class="titulo">
-					<span>Ofertas</span>
-				</div>
-				<div class="oferta">
-					<div class="loader" style="display: none;"></div>
-					<div class="funko" ng-repeat="oferta in ofertas">
-						<div class="thumbnail">
-							<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">
-								<img src="{{oferta.main_image}}" />
-							</a>
-						</div>
-						<div class="nombre">
-							<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.name}}</a>
-						</div>
-						<div class="precio">
-							<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.price}}€</a>
-						</div>
-					</div>
-					<div class="error" style="display: none;">
-						Ha habido un error al cargar las ofertas
-					</div>
-				</div>
+			<div id="titulo-fix" class="titulo">
+				<span>Ofertas</span>
 			</div>
-			<div class="novedades">
-				<div class="titulo">
-					<span>Novedades</span>
-				</div>
-				<div class="novedad">
-					<div class="loader" style="display: none;"></div>
-					<div class="funko" ng-repeat="novedad in novedades">
-						<div class="thumbnail">
-							<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">
-								<img src="{{novedad.main_image}}" />
-							</a>
+			<div class="height100" ng-scrollbars ng-scrollbars-config="config">
+				<div class="ofertas">
+					<div class="oferta">
+						<div class="loader" style="display: none;"></div>
+						<div class="funko" ng-repeat="oferta in ofertas">
+							<div class="thumbnail">
+								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">
+									<img src="{{oferta.main_image}}" />
+								</a>
+							</div>
+							<div class="nombre">
+								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.name}}</a>
+							</div>
+							<div class="precio">
+								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.price}}€</a>
+							</div>
 						</div>
-						<div class="nombre">
-							<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.name}}</a>
-						</div>
-						<div class="precio">
-							<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.price}}€</a>
+						<div class="error" style="display: none;">
+							Ha habido un error al cargar las ofertas
 						</div>
 					</div>
-					<div class="error" style="display: none;">
-						Ha habido un error al cargar las novedades
+				</div>
+				<div class="novedades">
+					<div class="titulo">
+						<span>Novedades</span>
+					</div>
+					<div class="novedad">
+						<div class="loader" style="display: none;"></div>
+						<div class="funko" ng-repeat="novedad in novedades">
+							<div class="thumbnail">
+								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">
+									<img src="{{novedad.main_image}}" />
+								</a>
+							</div>
+							<div class="nombre">
+								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.name}}</a>
+							</div>
+							<div class="precio">
+								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.price}}€</a>
+							</div>
+						</div>
+						<div class="error" style="display: none;">
+							Ha habido un error al cargar las novedades
+						</div>
 					</div>
 				</div>
 			</div>

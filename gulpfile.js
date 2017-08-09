@@ -4,7 +4,6 @@ var gutil = require('gulp-util');
 var concat = require('gulp-concat');
 var cleanCss = require('gulp-clean-css');
 var jshint = require('gulp-jshint');
-var sourcemaps = require('gulp-sourcemaps');
 var ngAnnotate = require('gulp-ng-annotate');
 var minifyHtml = require("gulp-minify-html");
 var deleteLines = require('gulp-delete-lines');
@@ -31,8 +30,10 @@ gulp.task('pack-html', function() {
 gulp.task('pack-vendor', function() {
 	return gulp.src([
 			'./node_modules/jquery/dist/jquery.min.js',
+			'./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js',
 			'./node_modules/angular/angular.min.js',
-			'./node_modules/ngstorage/ngStorage.min.js'
+			'./node_modules/ngstorage/ngStorage.min.js',
+			'./node_modules/ng-scrollbars/dist/scrollbars.min.js'
 		])
 		.pipe(concat('vendor.js'))
 		.pipe(uglify())
@@ -56,16 +57,18 @@ gulp.task('js',['lint'], function () {
 			'./js/mundofunko-controller.js',
 			'./js/mundofunko-controller-background.js'])
 		.pipe(concat('mundofunko-ext.js'))
-	  	//.pipe(sourcemaps.init())
 		.pipe(ngAnnotate())
 		.pipe(uglify())
-		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest("./build/js"));
 });
 
 
 gulp.task('pack-css', function () {
-	return gulp.src(['./css/style.css'])
+	return gulp.src([
+			'./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+			'./css/style.css'
+		])
+		.pipe(concat('style.css'))
 		.pipe(cleanCss())
 		.pipe(gulp.dest('./build/css'));
 });
