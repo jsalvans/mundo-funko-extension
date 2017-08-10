@@ -35,8 +35,14 @@
 									<img src="{{oferta.main_image}}" />
 								</a>
 							</div>
-							<div class="nombre">
-								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.name}}</a>
+							<div class="bloque">
+								<div  ng-class="oferta.stock <= 3 ? 'nombre pocas' : 'nombre'">
+									<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.name}}</a>
+								</div>
+								<div class="ultimas" ng-if="oferta.stock <= 3">
+									<span ng-if="oferta.stock == 1">¡Solo queda 1 unidad!</span>
+									<span ng-if="oferta.stock > 1">¡Solo quedan {{oferta.stock}} unidades!</span>
+								</div>
 							</div>
 							<div class="precio">
 								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.price}}€</a>
@@ -59,8 +65,14 @@
 									<img src="{{novedad.main_image}}" />
 								</a>
 							</div>
-							<div class="nombre">
-								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.name}}</a>
+							<div class="bloque">
+								<div ng-class="novedad.stock <= 3 ? 'nombre pocas' : 'nombre'">
+									<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.name}}</a>
+								</div>
+								<div class="ultimas" ng-if="novedad.stock <= 3">
+									<span ng-if="novedad.stock == 1">¡Solo queda 1 unidad!</span>
+									<span ng-if="novedad.stock > 1">¡Solo quedan {{novedad.stock}} unidades!</span>
+								</div>
 							</div>
 							<div class="precio">
 								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.price}}€</a>

@@ -63,7 +63,7 @@ body {
 	vertical-align: middle;
 }
 
-.nombre {
+.bloque {
 	height: 100%;
 	width: 65%;
 	float: right;
@@ -71,10 +71,18 @@ body {
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
+}
+
+.nombre {
 	text-align: center;
 	word-wrap: break-word;
 	text-overflow: ellipsis;
 	overflow: hidden;
+	height: 100%;
+}
+
+.nombre.pocas {
+	height: 69% !important;
 }
 
 .nombre a {
@@ -86,7 +94,6 @@ body {
 	padding: 15px;
 	vertical-align: -webkit-baseline-middle;
 }
-
 .nombre a:hover {
 	color: #8d74b9;
 }
@@ -127,11 +134,6 @@ body {
 	text-align: center;
 }
 
-/*.ofertas .titulo {
-	position:fixed;
-	z-index: 50;
-}*/
-
 .novedades .titulo {
 	margin-top: 10px;
 	z-index: 70;
@@ -165,6 +167,13 @@ body {
 
 .input input {
 	width: 95%;
+}
+
+.ultimas {
+	color: #a94442;
+	font-weight: 700;
+	margin-top: 2px;
+	text-align: center;
 }
 
 @-moz-document url-prefix() {

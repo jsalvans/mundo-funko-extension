@@ -6,11 +6,14 @@ mfApp.controller('MundoFunkoBrowserExtControllerBackground', function ($scope, $
 	if (!$localStorage.hasOwnProperty('timeRefresh')) {
 		$localStorage.timeRefresh = 0.5;
 	}
+	if (!$localStorage.hasOwnProperty('newCounter')) {
+		$localStorage.newCounter = 0;
+	}
+	if (!$localStorage.hasOwnProperty('lastId')) {
+		$localStorage.lastId = 0;
+	}
 
 	$scope.comprovar = function() {
-		if (!$localStorage.hasOwnProperty('newCounter')) {
-			$localStorage.newCounter = 0;
-		}
 
 		$http.get(AppSettings.api.url + 'last_products_sale/' + AppSettings.api.user + '/' + AppSettings.api.pass + '/' + AppSettings.api.token + '/3/es')
 			.then(function successCallback(response) {
@@ -40,12 +43,18 @@ mfApp.controller('MundoFunkoBrowserExtControllerBackground', function ($scope, $
 		$http.get(AppSettings.api.url + 'products/' + AppSettings.api.user + '/' + AppSettings.api.pass + '/' + $localStorage.numNovedades + '/es')
 			.then(function successCallback(response) {
 				$scope.novedades = response.data;
+				var biggestId = 0;
 				for (var i = 0; i < $scope.novedades.length; i++) {
-					if($localStorage.hasOwnProperty('novedades') &&
-							$scope.novedades[i].id != $localStorage.novedades[0].id) {
+					if($scope.novedades[i].id > biggestId) {
+						biggestId = $scope.novedades[i].id;
+					}
+					if($scope.novedades[i].id > $localStorage.lastId) {
 						var forumUrl = 'http://mundofunko.com/p/'+$scope.novedades[i].id;
 						var options;
-						if(!!window.chrome && !!window.chrome.webstore) {
+
+						var userAgent = navigator.userAgent.toLowerCase();
+						var isChrome = userAgent.indexOf('chrome') > -1 && userAgent.indexOf('opr/') == -1;
+						if(isChrome) {
 							options = {
 								type: "image",
 								title: "¡Hay una Funko nueva en nuestra web!",
@@ -69,6 +78,7 @@ mfApp.controller('MundoFunkoBrowserExtControllerBackground', function ($scope, $
 						break;
 					}
 				}
+				$localStorage.lastId = biggestId;
 				$localStorage.novedades = $scope.novedades;
 				$localStorage.lastRefresh = new Date().getMilliseconds();
 				$('.novedades.loader').hide();
