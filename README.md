@@ -35,3 +35,8 @@ Ahora puedes cargar la extensión en tu navegador a través de la página de her
 - Firefox
   1. Escribe `about:debugging` en la barra de direcciones para abrir la página de complementos.
   2. Haz clic en el botón "Cargar complemento temporal", navega hasta el archivo `build/manifest.json` y haz clic en "Abrir".
+  
+- Opera
+  1. Escribe `about:extensions` en la barra de direcciones para abrir la página de extensiones.
+  2. Haz clic en el botón "Modo de autor".
+  3. Haz clic en el botón "Cargar extensión descomprimida…", ve a la carpeta `build` y haz clic en "Aceptar".
