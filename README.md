@@ -5,9 +5,9 @@ Una forma fácil y sencilla de no perderte ninguna nuestras ofertas y estar siem
 
 La estensión está disponible para los siguentes navegadores:<br>
 <a href="https://chrome.google.com/webstore/detail/mundo-funko/goibikienfkamlekcdhlcobgnjmaoabh" target="_blank"><img src="https://s-media-cache-ak0.pinimg.com/originals/6a/34/1e/6a341ef5ca34e6b2080c7fa50476329a.png" height="58"></a><br><br>
-Y pronto en los siguientes:
-<a href="https://addons.mozilla.org/es/firefox/addon/mundo-funko/" target="_blank"><img src="http://e03-elmundo.uecdn.es/assets/multimedia/imagenes/2015/09/24/14430895421450.png" height="58"></a>
-<img src="https://operasoftware.github.io/logo/dest/logo/full-red.svg" height="58">
+Y pronto en los siguientes:<br>
+<a href="https://addons.mozilla.org/es/firefox/addon/mundo-funko/" target="_blank"><img src="http://4.bp.blogspot.com/-ZHixWmbaR-M/VSo81IfExlI/AAAAAAAAFgE/DoPCiKnc5nc/s1600/firefox_logo-only_RGB.png" height="58"></a>
+<img src="https://vignette2.wikia.nocookie.net/central/images/1/1d/Opera-icon-high-res.png/revision/latest/scale-to-width-down/477?cb=20151126225931" height="58">
 
 
 # Construir y ejecutar
