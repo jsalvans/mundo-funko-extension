@@ -4,15 +4,15 @@ Extensión oficial de [Mundo Funko](http://mundofunko.com/) para navegadores web
 Una forma fácil y sencilla de no perderte ninguna nuestras ofertas y estar siempre al día de nuestras novedades.
 
 La estensión está disponible para los siguentes navegadores:<br>
-<a href="https://chrome.google.com/webstore/detail/mundo-funko/goibikienfkamlekcdhlcobgnjmaoabh" target="_blank">
-  <img src="https://camo.githubusercontent.com/cde444fe44e96d20e08f84573c1cbf4f4bcbe1c5/68747470733a2f2f696d6775722e636f6d2f334334694b4f302e706e67" height="58">
+<a href="https://chrome.google.com/webstore/detail/mundo-funko/goibikienfkamlekcdhlcobgnjmaoabh">
+  <img src="https://camo.githubusercontent.com/cde444fe44e96d20e08f84573c1cbf4f4bcbe1c5/68747470733a2f2f696d6775722e636f6d2f334334694b4f302e706e67" height="64">
 </a>
-<a href="https://addons.opera.com/es/extensions/details/mundo-funko/" target="_blank">
-  <img src="https://camo.githubusercontent.com/6762b4a97e65d1727ad824a520fa766559ba745b/687474703a2f2f696d6775722e636f6d2f6e534a396874552e706e67" height="58">
+<a href="https://addons.opera.com/es/extensions/details/mundo-funko/">
+  <img src="https://camo.githubusercontent.com/6762b4a97e65d1727ad824a520fa766559ba745b/687474703a2f2f696d6775722e636f6d2f6e534a396874552e706e67" height="64">
 </a><br><br>
 Y pronto en los siguientes:<br>
-<a href="https://addons.mozilla.org/es/firefox/addon/mundo-funko/" target="_blank">
-  <img src="https://camo.githubusercontent.com/683f0e8bd1f38384994477f0c39e95f4ebd6c28c/687474703a2f2f696d6775722e636f6d2f4a5850396a69722e706e67" height="58">
+<a href="https://addons.mozilla.org/es/firefox/addon/mundo-funko/">
+  <img src="https://camo.githubusercontent.com/683f0e8bd1f38384994477f0c39e95f4ebd6c28c/687474703a2f2f696d6775722e636f6d2f4a5850396a69722e706e67" height="64">
 </a>
 
 
