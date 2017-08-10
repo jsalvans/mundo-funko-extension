@@ -3,7 +3,7 @@
 Extensión oficial de [Mundo Funko](http://mundofunko.com/) para navegadores web. 
 Una forma fácil y sencilla de no perderte ninguna nuestras ofertas y estar siempre al día de nuestras novedades.
 
-La estensión está disponible para los siguentes navegadores:<br>
+La extensión está disponible para los siguentes navegadores:<br>
 <a href="https://chrome.google.com/webstore/detail/mundo-funko/goibikienfkamlekcdhlcobgnjmaoabh">
   <img src="https://camo.githubusercontent.com/cde444fe44e96d20e08f84573c1cbf4f4bcbe1c5/68747470733a2f2f696d6775722e636f6d2f334334694b4f302e706e67" height="64">
 </a>
