@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Mundo Funko",
-	"version": "1.0.5",
+	"version": "1.0.6.1",
 	"description": "Extensión para ver las novedades de Mundo Funko",
 	"icons": {
 		"16": "img/icon16.png",
@@ -22,9 +22,9 @@
 	"permissions": [
 		"storage",
 		"notifications",
-		"*://dashboard.kiory.pro/",
-		"*://kiory.com/",
-		"*://mundofunko.com/"
+		"*://dashboard.kiory.pro/**",
+		"*://kiory.com/**",
+		"*://mundofunko.com/**"
 	],
     "homepage_url": "http://mundofunko.com/"
 }
