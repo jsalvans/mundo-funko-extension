@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Mundo Funko",
-	"version": "1.0.6.1",
+	"version": "1.0.7",
 	"description": "Extensión para ver las novedades de Mundo Funko",
 	"icons": {
 		"16": "img/icon16.png",
@@ -16,9 +16,6 @@
 	"background": {
 		"page": "background.html"
 	},
-    "gecko": {
-        "strict_min_version": "42.0"
-    },
 	"permissions": [
 		"storage",
 		"notifications",

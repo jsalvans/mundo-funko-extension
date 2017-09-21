@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gulpsync = require('gulp-sync')(gulp);
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var concat = require('gulp-concat');
@@ -62,15 +63,23 @@ gulp.task('js',['lint'], function () {
 		.pipe(gulp.dest("./build/js"));
 });
 
-
 gulp.task('pack-css', function () {
 	return gulp.src([
 			'./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css',
+			'./node_modules/font-awesome/css/font-awesome.min.css',
 			'./css/style.css'
 		])
 		.pipe(concat('style.css'))
 		.pipe(cleanCss())
 		.pipe(gulp.dest('./build/css'));
+});
+
+gulp.task('fonts', function () {
+	return gulp.src([
+			'./node_modules/font-awesome/fonts/*',
+			'./css/style.css'
+		])
+		.pipe(gulp.dest('./build/fonts'));
 });
 
 gulp.task('images', function() {
@@ -87,5 +96,12 @@ gulp.task('clean:build', function () {
 	return del(['build/']);
 });
 
-
-gulp.task('default', ['clean:build','pack-html','pack-css','pack-vendor','js','images','manifest']);
+gulp.task('default', gulpsync.sync([
+	'clean:build',
+	'pack-html',
+	'pack-css',
+	'pack-vendor',
+	'js',
+	'fonts',
+	'images',
+	'manifest']));
