@@ -15,7 +15,7 @@ mfApp.controller('MundoFunkoBrowserExtControllerBackground', function ($scope, $
 
 	$scope.comprovar = function() {
 
-		$http.get(AppSettings.api.url + 'last_products_sale/' + AppSettings.api.user + '/' + AppSettings.api.pass + '/' + AppSettings.api.token + '/3/es')
+		$http.get(AppSettings.api.url + 'products/last_sales/' + AppSettings.api.user + '/' + AppSettings.api.pass + '/3/es')
 			.then(function successCallback(response) {
 				$scope.ofertas = [];
 				for(var o in response.data) {
@@ -48,7 +48,7 @@ mfApp.controller('MundoFunkoBrowserExtControllerBackground', function ($scope, $
 					if($scope.novedades[i].id > biggestId) {
 						biggestId = $scope.novedades[i].id;
 					}
-					if($scope.novedades[i].id > $localStorage.lastId) {
+					if($localStorage.lastId != 0 && $scope.novedades[i].id > $localStorage.lastId) {
 						var forumUrl = 'http://mundofunko.com/p/'+$scope.novedades[i].id;
 						var options;
 

@@ -1,4 +1,8 @@
-mfApp.controller('MundoFunkoBrowserExtController', function ($scope, $http, $location, $timeout, $localStorage, $sessionStorage) {
+mfApp.controller('MundoFunkoBrowserExtController', function ($scope, $http, $location, $timeout, $localStorage, $sessionStorage, $q, AppSettings, buscarFunko) {
+
+	$scope.buscar = false;
+	$scope.query = "";
+	$scope.resultats = [];
 
 	if (!$localStorage.hasOwnProperty('numNovedades')) {
 		$localStorage.numNovedades = 10;
@@ -30,6 +34,53 @@ mfApp.controller('MundoFunkoBrowserExtController', function ($scope, $http, $loc
 				$('.novedades .loader').hide();
 				$('.novedades .funko').show();
 			}
+		}
+	};
+
+	$scope.toogleCerca = function() {
+		$scope.buscar = !$scope.buscar;
+		$scope.query = "";
+		$scope.resultats = [];
+		if($scope.buscar == true) {
+			setTimeout(function () {$('.queryText').focus();}, 300);
+			$('.resultats .funko').hide();
+		}
+	};
+
+	$scope.canceler = undefined;
+	$scope.buscarApi = function(textCerca) {
+		if($scope.canceler != undefined) {
+			$scope.canceler.resolve();
+			$scope.canceler = undefined;
+		}
+		$scope.canceler = $q.defer();
+		
+		$('.resultats .funko').hide();
+		$('.resultats .noResults').hide();
+		$('.resultats .noText').hide();
+		$('.resultats .loader').hide();
+		
+		if(textCerca == '')
+			$('.resultats .noText').show();
+		else {
+			$('.resultats .loader').show();
+
+			var query = encodeURI(textCerca.replace(" ", "-"));
+			var url = AppSettings.api.url + 'product/search/' + AppSettings.api.user + '/' + AppSettings.api.pass + '/' + query + '/es';
+			buscarFunko.cercar(url, $scope.canceler).then(
+				function(response){
+					if(response != 'abort') {
+						$scope.resultats = response;
+						$('.resultats .loader').hide();
+						if($scope.resultats.length == 0) {
+							$('.resultats .noResults').show();
+						} else {
+							$('.resultats .funko').show();
+						}
+						$scope.canceler = undefined;
+					}
+				}
+			);
 		}
 	};
 
