@@ -83,6 +83,50 @@ mfApp.controller('MundoFunkoBrowserExtController', function ($scope, $http, $loc
 			);
 		}
 	};
+	
+	$scope.config = {
+			scrollButtons: {
+				scrollAmount: 'auto',
+				enable: false
+			},
+			scrollInertia: 400,
+			axis: 'y',
+			theme: 'minimal-dark',
+			autoHideScrollbar: true,
+			callbacks: {
+				whileScrolling: function () {
+					if ($(".mCSB_container") != undefined) {
+						if ($(".mCSB_container").position().top <= -280) {
+							$("#titulo-fix").html("Novedades");
+						} else {
+							$("#titulo-fix").html("Ofertas");
+						}
+					}
+				}
+			}
+		};
+			
+	$scope.configSidebar = {
+			scrollButtons: {
+				scrollAmount: 'auto',
+				enable: false
+			},
+			scrollInertia: 400,
+			axis: 'y',
+			theme: 'minimal-dark',
+			autoHideScrollbar: true,
+			callbacks: {
+				whileScrolling: function () {
+					if ($(".mCSB_container") != undefined) {
+						if ($(".mCSB_container").position().top <= -280) {
+							$("#titulo-fix").html("Novedades");
+						} else {
+							$("#titulo-fix").html("Ofertas");
+						}
+					}
+				}
+			}
+		};
 
 	setInterval(function() {$scope.init();}, scheludeTime);
 	$scope.init();

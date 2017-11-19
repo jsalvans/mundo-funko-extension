@@ -108,6 +108,9 @@ mfApp.controller('MundoFunkoBrowserExtControllerBackground', function ($scope, $
 
 		if($localStorage.newCounter == 0) {
 			chrome.browserAction.setBadgeText({text: ''});
+		} else if($localStorage.newCounter < 0) {
+			$localStorage.newCounter = 0;
+			chrome.browserAction.setBadgeText({text: ''});
 		} else {
 			chrome.browserAction.setBadgeText({text: $localStorage.newCounter.toString()});
 		}
