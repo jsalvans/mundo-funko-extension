@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="sidebarHtml">
+	<head>
+		<title>Mundo Funko</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="./img/icon.png" type="image/x-icon"/>
+
+		<!-- DEPENDENCES -->
+		<script type="text/javascript" src="./node_modules/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+		<script type="text/javascript" src="./node_modules/ngstorage/ngStorage.min.js"></script>
+		<script type="text/javascript" src="./node_modules/ng-scrollbars/dist/scrollbars.min.js"></script>
+		<script type="text/javascript" src="./js/mundofunko-app.js"></script>
+		<script type="text/javascript" src="./js/mundofunko-config.js"></script>
+		<script type="text/javascript" src="./js/mundofunko-controller.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="./node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css"/>
+		<link rel="stylesheet" type="text/css" href="./node_modules/font-awesome/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./css/style.css"/>
+	</head>
+	<body ng-app="MundoFunkoBrowserExtApp" class="sidebarBody">
+		<div class="height100" ng-controller="MundoFunkoBrowserExtController">
+			<div class="bar">
+				<a href="http://mundofunko.com/" target="_blank"><img src="./img/logo.png" /></a>
+				<button ng-click="toogleCerca()" class="botoCerca fa fa-search" ng-if="!buscar"></button>
+				<button ng-click="toogleCerca()" class="botoCerca fa fa-times-circle-o" ng-if="buscar"></button>
+			</div>
+			<div id="titulo-fix" class="titulo"ng-if="!buscar">
+				<span>Ofertas</span>
+			</div>
+			<div ng-scrollbars ng-scrollbars-config="configSidebar" ng-if="!buscar" style="height: calc(100vh - 80px);">
+				<div class="ofertas">
+					<div class="oferta">
+						<div class="loader" style="display: none;"></div>
+						<div class="funko" ng-repeat="oferta in ofertas">
+							<div class="thumbnail">
+								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">
+									<img src="{{oferta.main_image}}" />
+								</a>
+							</div>
+							<div class="bloque">
+								<div  ng-class="oferta.stock <= 3 ? 'nombre pocas' : 'nombre'">
+									<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.name}}</a>
+								</div>
+								<div class="ultimas" ng-if="oferta.stock <= 3">
+									<span ng-if="oferta.stock == 1">¡Solo queda 1 unidad!</span>
+									<span ng-if="oferta.stock > 1">¡Solo quedan {{oferta.stock}} unidades!</span>
+								</div>
+							</div>
+							<div class="precio">
+								<a href="http://mundofunko.com/p/{{oferta.id}}" target="_blank">{{oferta.price}}€</a>
+							</div>
+						</div>
+						<div class="error" style="display: none;">
+							Ha habido un error al cargar las ofertas
+						</div>
+					</div>
+				</div>
+				<div class="novedades">
+					<div class="titulo">
+						<span>Novedades</span>
+					</div>
+					<div class="novedad">
+						<div class="loader" style="display: none;"></div>
+						<div class="funko" ng-repeat="novedad in novedades">
+							<div class="thumbnail">
+								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">
+									<img src="{{novedad.main_image}}" />
+								</a>
+							</div>
+							<div class="bloque">
+								<div ng-class="novedad.stock <= 3 ? 'nombre pocas' : 'nombre'">
+									<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.name}}</a>
+								</div>
+								<div class="ultimas" ng-if="novedad.stock <= 3">
+									<span ng-if="novedad.stock == 1">¡Solo queda 1 unidad!</span>
+									<span ng-if="novedad.stock > 1">¡Solo quedan {{novedad.stock}} unidades!</span>
+								</div>
+							</div>
+							<div class="precio">
+								<a href="http://mundofunko.com/p/{{novedad.id}}" target="_blank">{{novedad.price}}€</a>
+							</div>
+						</div>
+						<div class="error" style="display: none;">
+							Ha habido un error al cargar las novedades
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="titulo-cerca" class="titulo" ng-if="buscar">
+				<input class="queryText" type="text" ng-model="query" ng-change="buscarApi(query)" max="50" />
+			</div>
+			<div ng-scrollbars ng-scrollbars-config="configSidebar" ng-if="buscar" style="height: calc(100vh - 80px);">
+				<div class="resultats">
+					<div class="resultats">
+						<div class="loader" style="display: none;"></div>
+						<div class="funko" ng-repeat="resultat in resultats">
+							<div class="thumbnail">
+								<a href="http://mundofunko.com/p/{{resultat.id}}" target="_blank">
+									<img src="{{resultat.main_image}}" />
+								</a>
+							</div>
+							<div class="bloque">
+								<div  ng-class="resultat.stock <= 3 ? 'nombre pocas' : 'nombre'">
+									<a href="http://mundofunko.com/p/{{resultat.id}}" target="_blank">{{resultat.name}}</a>
+								</div>
+								<div class="ultimas" ng-if="resultat.stock <= 3">
+									<span ng-if="resultat.stock == 1">¡Solo queda 1 unidad!</span>
+									<span ng-if="resultat.stock > 1">¡Solo quedan {{resultat.stock}} unidades!</span>
+								</div>
+							</div>
+							<div class="precio">
+								<a href="http://mundofunko.com/p/{{resultat.id}}" target="_blank">{{resultat.price}}€</a>
+							</div>
+						</div>
+						<div class="error" style="display: none;">
+							Ha habido un error al cargar las ofertas
+						</div>
+						<div class="noText">
+							Introduce un texto para buscar tu Funko :D
+						</div>
+						<div class="noResults" style="display: none;">
+							No se han encontrado Funkos :(
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -9,15 +9,20 @@ var ngAnnotate = require('gulp-ng-annotate');
 var minifyHtml = require("gulp-minify-html");
 var deleteLines = require('gulp-delete-lines');
 var replace = require('gulp-replace');
-var del = require('del');
+var del = require('del'); 
 
 gulp.task('pack-html', function() {
-	return gulp.src(['./popup.html','./background.html'])
+	return gulp.src(['./popup.html','./background.html','./sidebar.html'])
 		.pipe(replace('./node_modules/jquery/dist/jquery.min.js', './js/vendor.js'))
 		.pipe(replace('./js/mundofunko-app.js', './js/mundofunko-ext.js'))
 		.pipe(deleteLines({
 			'filters': [
 				/(<script\s+type=["']text\/javascript["']\s+src=".\/(node_modules\/|js\/mundofunko-c))+/i
+			]
+		}))
+		.pipe(deleteLines({
+			'filters': [
+				/(<link\s+rel=["']stylesheet["']\s+type=["']text\/css["']\s+href=".\/(node_modules))+/i
 			]
 		}))
 		.pipe(minifyHtml({

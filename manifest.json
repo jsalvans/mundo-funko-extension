@@ -16,6 +16,11 @@
 	"background": {
 		"page": "background.html"
 	},
+	"sidebar_action": {
+		"default_title": "Mundo Funko",
+		"default_panel": "sidebar.html",
+		"default_icon": "img/icon.png"
+	},
 	"permissions": [
 		"storage",
 		"notifications",
