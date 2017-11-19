@@ -1,7 +1,7 @@
 {
 	"name": "mundofunko-chrome-extension",
 	"description": "Mundo Funko Chrome Extension",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"author": "Jordi Salvans",
 	"dependencies": {
 		"jquery": "^3.2.1",

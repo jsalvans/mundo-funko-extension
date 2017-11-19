@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Mundo Funko",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Extensión para ver las novedades de Mundo Funko",
 	"icons": {
 		"16": "img/icon16.png",
