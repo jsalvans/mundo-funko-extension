@@ -1,5 +1,5 @@
 {
-    ofertas_especiales: {
+    "ofertas_especiales": {
         "id": 1,
         "name": "¡Feliz navidad!",
         "description": "Consigue descuentos con este codigo",
